@@ -1,1 +1,1 @@
-# meta-raspberry-web
+# meta-raspberrypi-web
