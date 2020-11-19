@@ -1,22 +1,22 @@
 #!/bin/bash 
-
-
+cd ..
+#$SHELL
 echo "Custom Init Enviroment for Yocto and Raspberry PI 4"
 source oe-init-build-env
-
 # If conf/local.conf is not generated, no need to go further
 if [ ! -e conf/local.conf ]; then
     echo "Error" && exit 1
 fi
+echo ""
 echo "Get the custom configuration"
+echo ""
 cd ..
-\cp initRasp/local.conf.sample build/conf/
-\cp initRasp/bblayers.conf.sample build/conf/
+\cp meta-raspberrypi-web/initRasp/local.conf.sample build/conf/
+\cp meta-raspberrypi-web/initRasp/bblayers.conf.sample build/conf/
 
 if [ -e build/conf/local.conf.sample ]; then
    \mv build/conf/local.conf.sample build/conf/local.conf
 fi
-
 if [ -e build/conf/bblayers.conf.sample ]; then
    \mv build/conf/bblayers.conf.sample build/conf/bblayers.conf
 fi
@@ -33,5 +33,3 @@ Common targets are:
 EOF
 cd build/
 $SHELL
-
-
