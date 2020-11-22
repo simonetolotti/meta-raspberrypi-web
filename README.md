@@ -30,6 +30,7 @@ cd ..
 ```
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
+(Verify with «git branch»)
 git switch dunfell
 cd ..
 ```
@@ -51,7 +52,7 @@ cd meta-raspberrypi-web
 ### Bitbake
 
 ```
-bitbake rpi-basic-image
+bitbake core-image-base
 ```
 
 
