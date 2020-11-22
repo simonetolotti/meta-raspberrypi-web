@@ -36,6 +36,13 @@
 # This sets the default machine to be qemux86-64 if no other machine is selected:
 MACHINE ??= "raspberrypi4-64"
 
+# Adding systemd - by Simon
+
+DISTRO_FEATURES_append = " systemd "
+DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+VIRTUAL-RUNTIME_initscripts = ""
+
 #
 # Where to place downloads
 #
