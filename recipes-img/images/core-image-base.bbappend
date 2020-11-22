@@ -1,4 +1,5 @@
 IMAGE_INSTALL_append = " \
+  nano \
   openssl \   
   nginx \   
   nodejs \
