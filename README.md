@@ -30,8 +30,8 @@ cd ..
 ```
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
-(Verify with «git branch»)
 git switch dunfell
+(Verify with «git branch»)
 cd ..
 ```
 
