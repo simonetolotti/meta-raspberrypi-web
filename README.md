@@ -39,7 +39,6 @@ cd ..
 
 ```
 git clone https://github.com/simonetolotti/meta-raspberrypi-web.git
-cd meta-raspberrypi-web
 ```
 
 ### Init enviroment 
