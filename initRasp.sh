@@ -25,7 +25,6 @@ Welcome to PI4 - Web Server
 You can now run:
 	bitbake rpi-basic-image
 	bitbake core-image-base
- 	bitbake rpi-test-image
 
 Common targets are:
 `echo; ls meta-raspberrypi/conf/machine/*.conf \
