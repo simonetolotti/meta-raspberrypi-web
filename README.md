@@ -30,8 +30,8 @@ cd ..
 ```
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
-(Verify with «git branch»)
 git switch dunfell
+(Verify with «git branch»)
 cd ..
 ```
 
@@ -39,7 +39,6 @@ cd ..
 
 ```
 git clone https://github.com/simonetolotti/meta-raspberrypi-web.git
-cd meta-raspberrypi-web
 ```
 
 ### Init enviroment 
