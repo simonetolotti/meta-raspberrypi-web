@@ -1,4 +1,4 @@
-# meta-raspberrypi-web
+# meta-raspberrypi-web with NodeJS and Dotnet
 
 ### Prerequisities for Ubuntu 20.04 LTS
 
@@ -30,6 +30,15 @@ cd ..
 ```
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
+git switch dunfell
+(Verify with «git branch»)
+cd ..
+```
+### Get Meta Security
+
+```
+git clone git://git.yoctoproject.org/meta-security
+cd meta-raspberrypi
 git switch dunfell
 (Verify with «git branch»)
 cd ..
