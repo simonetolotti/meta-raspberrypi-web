@@ -11,7 +11,7 @@ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib buil
 ```
 git clone git://git.yoctoproject.org/poky
 cd poky
-git checkout tags/yocto-3.1.3 -b my-yocto-3.1.3
+git switch dunfell-next
 (Verify with «git branch»)
 ```
 
@@ -20,7 +20,7 @@ git checkout tags/yocto-3.1.3 -b my-yocto-3.1.3
 ```
 git clone git://git.yoctoproject.org/meta-raspberrypi
 cd meta-raspberrypi
-git switch dunfell
+git switch dunfell-next
 (Verify with «git branch»)
 cd ..
 ```
@@ -30,7 +30,7 @@ cd ..
 ```
 git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
-git switch dunfell
+git switch dunfell-next
 (Verify with «git branch»)
 cd ..
 ```
@@ -39,7 +39,7 @@ cd ..
 ```
 git clone git://git.yoctoproject.org/meta-security
 cd meta-raspberrypi
-git switch dunfell
+git switch dunfell-next
 (Verify with «git branch»)
 cd ..
 ```
