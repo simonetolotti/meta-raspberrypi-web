@@ -44,10 +44,11 @@ git switch dunfell-next
 cd ..
 ```
 
-### Get this...
+### Get these...
 
 ```
 git clone https://github.com/simonetolotti/meta-raspberrypi-web.git
+git clone https://github.com/simonetolotti/meta-dotnet-core.git
 ```
 
 ### Init enviroment 
