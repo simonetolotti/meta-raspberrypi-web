@@ -28,7 +28,7 @@ cd ..
 ### Get Meta Openembedded
 
 ```
-cd
+git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
 git switch dunfell-next
 (Verify with «git branch»)
@@ -44,10 +44,16 @@ git switch dunfell-next
 cd ..
 ```
 
-### Get this...
+### Change lttng
+
+Replace entire folder on meta/recipes-kernel/lttng from the master branch.
+So, lttng-modules will move from 2.11.6 to 2.12.3 version
+
+### Get these...
 
 ```
 git clone https://github.com/simonetolotti/meta-raspberrypi-web.git
+git clone https://github.com/simonetolotti/meta-dotnet-core.git
 ```
 
 ### Init enviroment 
