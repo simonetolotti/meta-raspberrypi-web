@@ -20,7 +20,7 @@ git switch dunfell-next
 ```
 git clone git://git.yoctoproject.org/meta-raspberrypi
 cd meta-raspberrypi
-git switch dunfell-next
+git switch dunfell
 (Verify with «git branch»)
 cd ..
 ```
@@ -28,7 +28,7 @@ cd ..
 ### Get Meta Openembedded
 
 ```
-git clone git://git.openembedded.org/meta-openembedded
+cd
 cd meta-openembedded
 git switch dunfell-next
 (Verify with «git branch»)
@@ -54,6 +54,8 @@ git clone https://github.com/simonetolotti/meta-raspberrypi-web.git
 
 ```
 cd meta-raspberrypi-web
+cd meta-raspberrypi-web
+git switch dotnet
 ./initRasp.sh
 ```
 
