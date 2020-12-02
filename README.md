@@ -44,6 +44,11 @@ git switch dunfell-next
 cd ..
 ```
 
+### Change lttng
+
+Replace entire folder on meta/recipes-kernel/lttng from the master branch.
+So, lttng-modules will move from 2.11.6 to 2.12.3 version
+
 ### Get these...
 
 ```
