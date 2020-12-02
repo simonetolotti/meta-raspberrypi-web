@@ -28,7 +28,7 @@ cd ..
 ### Get Meta Openembedded
 
 ```
-cd
+git clone git://git.openembedded.org/meta-openembedded
 cd meta-openembedded
 git switch dunfell-next
 (Verify with «git branch»)
