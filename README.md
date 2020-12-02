@@ -54,7 +54,6 @@ git clone https://github.com/simonetolotti/meta-raspberrypi-web.git
 
 ```
 cd meta-raspberrypi-web
-cd meta-raspberrypi-web
 git switch dotnet
 ./initRasp.sh
 ```
