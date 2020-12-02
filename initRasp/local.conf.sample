@@ -47,7 +47,10 @@ VIRTUAL-RUNTIME_initscripts = ""
 
 PACKAGECONFIG_pn-curl = "vers krb5 ssl zlib ipv6"
 PREFERRED_VERSION_dotnet-core = "5.0.0"
-CORE_IMAGE_EXTRA_INSTALL = "dotnet-core"
+PREFERRED_VERSION_aspnet-core = "5.0.0"
+CORE_IMAGE_EXTRA_INSTALL = "dotnet-core aspnet-core"
+#CORE_IMAGE_EXTRA_INSTALL = "libunwind icu libcurl libgssapi-krb5 dotnet-core"
+#CORE_IMAGE_EXTRA_INSTALL += "libunwind icu libcurl openssl libgssapi-krb5"
 
 #
 # Where to place downloads
