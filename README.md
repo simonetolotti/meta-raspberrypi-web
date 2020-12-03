@@ -1,4 +1,4 @@
-# meta-raspberrypi-web
+# meta-raspberrypi-web with NodeJS
 
 ### Prerequisities for Ubuntu 20.04 LTS
 
