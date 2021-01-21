@@ -38,7 +38,7 @@ cd ..
 
 ```
 git clone git://git.yoctoproject.org/meta-security
-cd meta-raspberrypi
+cd meta-security
 git switch dunfell-next
 (Verify with «git branch»)
 cd ..
