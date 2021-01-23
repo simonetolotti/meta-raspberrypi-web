@@ -1,5 +1,12 @@
 # meta-raspberrypi-web with NodeJS and Dotnet
 
+### Hardware Prerequisites
+
+Use the following Raspbeyy Pi 4 rev. B with 4GB RAM
+
+https://www.raspberrypi.org/products/raspberry-pi-4-model-b/
+
+
 ### Prerequisities for Ubuntu 20.04 LTS
 
 ```
