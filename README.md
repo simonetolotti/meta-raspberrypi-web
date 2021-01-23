@@ -2,7 +2,11 @@
 
 ### Hardware Prerequisites 
 
-Please install the following board from ST Microeletronics on Raspberry PI 4 rev B
+Use the following Raspbeyy PI 4 rev. B with 4GB RAM
+
+https://www.raspberrypi.org/products/raspberry-pi-4-model-b/
+
+Please install the following board from ST Microeletronics on Raspberry
 
 https://www.st.com/resource/en/data_brief/stpm4raspi.pdf
 
@@ -69,5 +73,66 @@ cd meta-raspberrypi-web
 ```
 bitbake core-image-base
 ```
+
+## Note about DTB and Kernel Options
+
+### Patch DTB
+
+Download Linux Kernel for Raspberry
+
+```
+git clone https://github.com/raspberrypi/linux.git
+```
+
+go to the same branch name as Kernel used on this recipe (rpi-5.4.y should be the default branch)
+
+go to go to arch/arm/boot/dts and modify the file bcm2711-rpi-4-b.dts with the followings:
+
+```
+spidev0: spidev@0{
+		compatible = "spidev";
+		reg = <0>;	/* CE0 */
+		#address-cells = <1>;
+		#size-cells = <0>;
+		spi-max-frequency = <125000000>;
+};
+```
+
+replaced by
+
+```
+st33htpm0: st33htpm@0{
+  	status="okay";
+    compatible = "st,st33htpm-spi";
+ 		reg = <0>;
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+		spi-max-frequency = <10000000>;
+};
+```
+
+And create the patch with 
+
+```
+git diff > tpm2_spi0_st33.patch
+```
+
+So, call it on recipes-kernel append recipe
+
+### Kernel Options
+
+Enable the following 
+
+```
+CONFIG_HW_RANDOM_TIMERIOMEM=y
+CONFIG_TCG_TPM=y
+CONFIG_TCG_TIS_SPI=y
+CONFIG_TCG_TIS_ST33ZP24_SPI=y
+# CONFIG_SECURITYFS is not set
+```
+
+
+
+
 
 
