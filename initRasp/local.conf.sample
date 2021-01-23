@@ -34,9 +34,13 @@
 #MACHINE ?= "edgerouter"
 #
 # This sets the default machine to be qemux86-64 if no other machine is selected:
-MACHINE ??= "raspberrypi4-64"
+MACHINE ??= "raspberrypi4"
 
-# Adding systemd - by Simon
+#skip connectivity checks - by Simon
+CONNECTIVITY_CHECK_URIS = ""
+
+# Adding systemd/TPM - by Simon
+ENABLE_SPI_BUS = "1"
 
 DISTRO_FEATURES_append = " systemd "
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"

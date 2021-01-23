@@ -12,6 +12,8 @@ BBLAYERS ?= " \
   ${TOPDIR}/../meta-openembedded/meta-oe \
   ${TOPDIR}/../meta-openembedded/meta-python \
   ${TOPDIR}/../meta-openembedded/meta-webserver \
+  ${TOPDIR}/../meta-openembedded/meta-networking \
+  ${TOPDIR}/../meta-openembedded/meta-perl \
   ${TOPDIR}/../meta-security \
   ${TOPDIR}/../meta-security/meta-tpm \
   ${TOPDIR}/../meta-raspberrypi \
