@@ -1,5 +1,10 @@
 # meta-raspberrypi-web with NodeJS
 
+### Video 
+
+This project was presented during the "IoT Saturday 2020" at Consorzio Universitario di Pordenone. (The 2020 edition was only online due to COVID-19 restrictions)
+https://www.youtube.com/watch?v=8CtLd19rwq4
+
 ### Hardware Prerequisites
 
 Use the following Raspbeyy Pi 4 rev. B with 4GB RAM
