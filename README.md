@@ -1,6 +1,12 @@
-# meta-raspberrypi-web with NodeJS and TPM
+# meta-raspberrypi-web with NodeJS and SPI TPM2
 
-### Prerequisities for Ubuntu 20.04 LTS
+### Hardware Prerequisites 
+
+Please install the following board from ST Microeletronics on Raspberry PI 4 rev B
+
+https://www.st.com/resource/en/data_brief/stpm4raspi.pdf
+
+### Prerequisities for Ubuntu 20.04 LTS 
 
 ```
 sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm
