@@ -1,4 +1,4 @@
-# meta-raspberrypi-web with NodeJS and SPI TPM2
+# Nginx, NodeJS and TPM2 from ST Microeletronics
 
 ### Hardware Prerequisites 
 
