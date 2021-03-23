@@ -1,4 +1,4 @@
-# meta-raspberrypi-web with NodeJS
+# Nginx and NodeJS support
 
 ### Video 
 
