@@ -1,4 +1,4 @@
-# meta-raspberrypi-web with NodeJS and Dotnet
+# Nginx, NodeJS and Dotnet
 
 ### Hardware Prerequisites
 
