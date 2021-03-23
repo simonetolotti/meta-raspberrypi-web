@@ -131,6 +131,75 @@ CONFIG_TCG_TIS_ST33ZP24_SPI=y
 # CONFIG_SECURITYFS is not set
 ```
 
+## How to test TPM
+
+### TPM tools (tpm2-tools)
+
+Try the following commands:
+
+```
+tpm2_getrandom 8 | xxd -p
+tpm2_getrandom 16 | xxd -p
+tpm2_getrandom 32 | xxd -p
+tpm2_getrandom 48 | xxd -p
+```
+
+### Generate Key (tpm2-tss)
+
+```
+tpm2tss-genkey -a rsa private.tss
+cat private.tss
+```
+
+result:
+
+```
+-----BEGIN TSS2 PRIVATE KEY-----
+MIICDwYGZ4EFCgEDoAMBAQECAQAEggEYARYAAQALAAYEcgAAABAAEAgAAAEAAQEA
+...
+5Xh9wLLdEzh0NoxGACGuGGiSAB/g2qHAdXQ9vofhMfYxoxFL7du9xBR7VwknuJIz
+bnfJ
+-----END TSS2 PRIVATE KEY-----
+```
+
+### TSS Engine (tpm2-tss-engine)
+
+Engine informations can be retrieved using
+
+```
+openssl engine -t -c tpm2tss
+```
+
+A set of 10 or 16 random bytes can be retrieved using
+
+```
+openssl rand -engine tpm2tss -hex 10
+openssl rand -engine tpm2tss -hex 16
+```
+
+#### RSA 2048
+
+```
+tpm2tss-genkey -a rsa -s 2048 mykey
+openssl rsa -engine tpm2tss -inform engine -in mykey -pubout -outform pem -out mykey.pub
+```
+
+#### EDCSA
+
+```
+tpm2tss-genkey -a ecdsa mykey
+openssl ec -engine tpm2tss -inform engine -in mykey -pubout -outform pem -out mykey.pub
+```
+
+#### Self Signed
+
+```
+tpm2tss-genkey -a rsa rsa.tss
+openssl req -new -x509 -engine tpm2tss -key rsa.tss -keyform engine -out rsa.crt
+```
+
+
+
 
 
 
