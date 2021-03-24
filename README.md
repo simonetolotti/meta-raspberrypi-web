@@ -1,4 +1,4 @@
-# Nginx, NodeJS and TPM2 from ST Microeletronics
+# Nginx, NodeJS and TPM2 from Infineon (SLx 9670) 
 
 ### Hardware Prerequisites 
 
@@ -6,9 +6,9 @@ Use the following Raspbeyy PI 4 rev. B with 4GB RAM
 
 https://www.raspberrypi.org/products/raspberry-pi-4-model-b/
 
-Please install the following board from ST Microeletronics on Raspberry
+Please install the following board from Infineon on Raspberry
 
-https://www.st.com/resource/en/data_brief/stpm4raspi.pdf
+https://www.infineon.com/dgdl/Infineon-OPTIGA_SLx_9670_TPM_2.0_Pi_4-ApplicationNotes-v07_19-EN.pdf?fileId=5546d4626c1f3dc3016c3d19f43972eb
 
 ### Prerequisities for Ubuntu 20.04 LTS 
 
@@ -76,46 +76,9 @@ bitbake core-image-base
 
 ## Note about DTB and Kernel Options
 
-### Patch DTB
+### Insert Overlay 
 
-Download Linux Kernel for Raspberry
-
-```
-git clone https://github.com/raspberrypi/linux.git
-```
-
-go to the same branch name as Kernel used on this recipe (rpi-5.4.y should be the default branch)
-
-go to go to arch/arm/boot/dts and modify the file bcm2711-rpi-4-b.dts with the followings:
-
-```
-spidev0: spidev@0{
-		compatible = "spidev";
-		reg = <0>;	/* CE0 */
-		#address-cells = <1>;
-		#size-cells = <0>;
-		spi-max-frequency = <125000000>;
-};
-```
-
-replaced by
-
-```
-st33htpm0: st33htpm@0{
-  	status="okay";
-    compatible = "st,st33htpm-spi";
- 		reg = <0>;
- 		#address-cells = <1>;
- 		#size-cells = <0>;
-		spi-max-frequency = <10000000>;
-};
-```
-
-And create the patch with 
-
-```
-git diff > tpm2_spi0_st33.patch
-```
+....to do...
 
 So, call it on recipes-kernel append recipe
 
@@ -124,11 +87,20 @@ So, call it on recipes-kernel append recipe
 Enable the following 
 
 ```
-CONFIG_HW_RANDOM_TIMERIOMEM=y
+CONFIG_HW_RANDOM_TPM=y
 CONFIG_TCG_TPM=y
+CONFIG_TCG_TIS_CORE=y
 CONFIG_TCG_TIS_SPI=y
-CONFIG_TCG_TIS_ST33ZP24_SPI=y
-# CONFIG_SECURITYFS is not set
+CONFIG_SECURITYFS=y
+CONFIG_TCG_TIS=y
+CONFIG_TCG_TIS_I2C_ATMEL=n
+CONFIG_TCG_TIS_I2C_INFINEON=n
+CONFIG_TCG_TIS_I2C_NUVOTON=n
+CONFIG_TCG_ATMEL=n
+CONFIG_TCG_VTPM_PROXY=n
+CONFIG_TCG_TIS_ST33ZP24_I2C=n
+CONFIG_TCG_TIS_ST33ZP24_SPI=n
+CONFIG_TRUSTED_KEYS=y
 ```
 
 ## How to test TPM
