@@ -133,6 +133,13 @@ CONFIG_TCG_TIS_ST33ZP24_SPI=y
 
 ## How to test TPM
 
+### HW Check from shell
+
+```
+dmesg | grep -i tpm
+ls /dev/tpm0
+```
+
 ### TPM tools (tpm2-tools)
 
 Try the following commands:
