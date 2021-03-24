@@ -74,9 +74,9 @@ cd meta-raspberrypi-web
 bitbake core-image-base
 ```
 
-## Note about DTB and Kernel Options
+## Note about Device Tree Source and Kernel Options
 
-### Patch DTB
+### Patch DTS / DTB
 
 Download Linux Kernel for Raspberry
 
