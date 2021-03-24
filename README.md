@@ -74,13 +74,25 @@ cd meta-raspberrypi-web
 bitbake core-image-base
 ```
 
-## Note about DTB and Kernel Options
+## Note about Device Tree Source and Kernel Options
 
-### Insert Overlay 
+### Insert Overlay DTS
 
-....to do...
+Download Linux Kernel for Raspberry
 
-So, call it on recipes-kernel append recipe
+```
+git clone https://github.com/raspberrypi/linux.git
+```
+
+go to the same branch name as Kernel used on this recipe (rpi-5.4.y should be the default branch)
+
+go to /arch/arm/boot/dts/overlays and insert the file tpm-slb9670-overlay.dts on recipes-kernel append recipe
+
+insert the following to the local.conf file, so the system will insert overlay on /boot/config.txt
+
+```
+RPI_EXTRA_CONFIG = "dtoverlay=tpm-slb9670"
+```
 
 ### Kernel Options
 
@@ -113,7 +125,6 @@ Try the following commands:
 tpm2_getrandom 8 | xxd -p
 tpm2_getrandom 16 | xxd -p
 tpm2_getrandom 32 | xxd -p
-tpm2_getrandom 48 | xxd -p
 ```
 
 ### Generate Key (tpm2-tss)
