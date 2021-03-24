@@ -1,7 +1,9 @@
+IMAGE_FEATURES_remove += "splash"
+
 IMAGE_INSTALL_append = " \
   nano \
   openssl \   
-  nginx \   
+  nginx \
   nodejs \
   tpm2-tools \
   libtss2 \
@@ -13,9 +15,10 @@ IMAGE_INSTALL_append = " \
   tpm2-tss \
   tpm2-tss-engine \
   tpm2-tss-engine-dev \ 
-  vim \ 
+  vim \
+  syslog-ng \
 "
-#KERNEL_DEVICETREE =+ "overlays/letstrust-tpm.dtbo"
+KERNEL_DEVICETREE =+ "overlays/tpm-slb9670.dtbo"
 
 IMAGE_FEATURES += "ssh-server-openssh"
 

@@ -34,15 +34,27 @@
 #MACHINE ?= "edgerouter"
 #
 # This sets the default machine to be qemux86-64 if no other machine is selected:
-MACHINE ??= "raspberrypi4"
+MACHINE ??= "raspberrypi4-64"
 
 #skip connectivity checks - by Simon
 CONNECTIVITY_CHECK_URIS = ""
 
+#remove OLD build - by Simon
+RM_OLD_IMAGE = "1"
+
 # Adding systemd/TPM - by Simon
 ENABLE_SPI_BUS = "1"
 
+# Modification for Infineon TPM - by Simon 
+# This insert overlay on  /boot/config.txt
+RPI_EXTRA_CONFIG = "dtoverlay=tpm-slb9670"
+
+# Not working - by Simon 
+#MACHINE_FEATURES_append = "tpm2"
+
+# DISTRO_FEATURES_append = " systemd tpm2"
 DISTRO_FEATURES_append = " systemd "
+
 DISTRO_FEATURES_BACKFILL_CONSIDERED = "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
 VIRTUAL-RUNTIME_initscripts = ""
