@@ -1,4 +1,4 @@
-# Nginx, NodeJS and TPM2 from ST Microeletronics
+# Nginx, NodeJS and TPM2 from ST Microeletronics (ST33)
 
 ### Hardware Prerequisites 
 
