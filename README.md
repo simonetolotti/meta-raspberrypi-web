@@ -86,9 +86,13 @@ git clone https://github.com/raspberrypi/linux.git
 
 go to the same branch name as Kernel used on this recipe (rpi-5.4.y should be the default branch)
 
-go to /arch/arm/boot/dts/overlays and insert the file tpm-slb9670-overlay.dts on recipes-kernel append recipe
+insert the following file on recipes-kernel append.
 
-insert the following to the local.conf file, so the system will insert overlay on /boot/config.txt
+```
+/arch/arm/boot/dts/overlays/tpm-slb9670-overlay.dts 
+```
+
+insert the following row on the local.conf file, so the Yocto-build will insert overlay on /boot/config.txt
 
 ```
 RPI_EXTRA_CONFIG = "dtoverlay=tpm-slb9670"
