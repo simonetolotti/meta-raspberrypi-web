@@ -17,6 +17,7 @@ IMAGE_INSTALL_append = " \
   tpm2-tss-engine-dev \ 
   vim \
   syslog-ng \
+  tpm2-test \
 "
 KERNEL_DEVICETREE =+ "overlays/tpm-slb9670.dtbo"
 
